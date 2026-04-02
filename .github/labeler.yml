@@ -1,0 +1,62 @@
+# Configuração do labeler para auto-label em PRs
+# Mapeia arquivos modificados para labels
+
+# Documentação - por arquivo
+'docs:conceitos-basicos':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/01-conceitos-basicos.md'
+
+'docs:comandos':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/02-comandos-essenciais.md'
+
+'docs:branching':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/03-branching-e-merge.md'
+
+'docs:pull-requests':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/04-pull-requests-e-review.md'
+
+'docs:boas-praticas':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/05-boas-praticas.md'
+
+'docs:conflitos':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/06-resolucao-conflitos.md'
+
+'docs:workflows':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/07-workflows-github.md'
+
+'docs:ferramentas':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/08-ferramentas-e-recursos.md'
+
+# Outros tipos de arquivo
+'documentacao':
+  - changed-files:
+    - any-glob-to-any-file: 'docs/**/*.md'
+
+'readme':
+  - changed-files:
+    - any-glob-to-any-file: 'README.md'
+
+'contributing':
+  - changed-files:
+    - any-glob-to-any-file: 'CONTRIBUTING.md'
+
+'templates':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**/*'
+
+'assets':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'docs/assets/**/*'
+      - '**/*.png'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.gif'

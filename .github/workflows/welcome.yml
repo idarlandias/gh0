@@ -1,0 +1,47 @@
+name: 👋 Boas-Vindas ao Novo Contribuidor
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar se é primeira contribuição
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |
+            ## 👋 Olá e bem-vindo(a)!
+
+            Obrigado por sua primeira contribuição ao projeto! 🎉
+
+            ### O que acontece agora?
+
+            1. **Revisão**: Outro estudante irá revisar seu Pull Request
+            2. **Feedback**: Você pode receber comentários ou sugestões de melhoria
+            3. **Ajustes**: Se necessário, faça os ajustes solicitados
+            4. **Aprovação**: Após aprovação, o professor fará o merge
+
+            ### Dicas importantes
+
+            - ✅ Responda aos comentários de revisão
+            - ✅ Seja receptivo ao feedback
+            - ✅ Faça perguntas se algo não estiver claro
+            - ✅ Seja paciente - revisões podem levar alguns dias
+
+            ### Recursos úteis
+
+            - 📖 [Guia de Contribuição](../CONTRIBUTING.md)
+            - 🤝 [Código de Conduta](../CODE_OF_CONDUCT.md)
+            - ❓ [Abrir uma pergunta](../../issues/new?template=pergunta.yml)
+
+            **Boa sorte e obrigado por contribuir!** 🚀
+
+            ---
+
+            _Esta é uma mensagem automática para contribuidores de primeira viagem._

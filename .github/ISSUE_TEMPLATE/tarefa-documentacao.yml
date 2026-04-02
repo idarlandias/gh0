@@ -1,0 +1,141 @@
+name: 📝 Tarefa de Documentação
+description: Template para tarefas de contribuição à documentação
+title: "[DOCS] "
+labels: ["tarefa-estudante", "documentacao"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Tarefa de Documentação
+
+        Use este template para criar tarefas de contribuição para os estudantes.
+
+        **Para Estudantes**: Se você quer reivindicar esta tarefa, comente "Gostaria de trabalhar nesta issue" abaixo.
+
+  - type: dropdown
+    id: arquivo
+    attributes:
+      label: Arquivo a Modificar
+      description: Qual arquivo de documentação deve ser editado?
+      options:
+        - docs/01-conceitos-basicos.md
+        - docs/02-comandos-essenciais.md
+        - docs/03-branching-e-merge.md
+        - docs/04-pull-requests-e-review.md
+        - docs/05-boas-praticas.md
+        - docs/06-resolucao-conflitos.md
+        - docs/07-workflows-github.md
+        - docs/08-ferramentas-e-recursos.md
+        - README.md
+        - CONTRIBUTING.md
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    id: secao
+    attributes:
+      label: Seção Específica
+      description: Qual seção ou tópico dentro do arquivo?
+      placeholder: "Ex: git init, O que é Git, Resolvendo conflitos, etc."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dificuldade
+    attributes:
+      label: Nível de Dificuldade
+      description: Qual o nível estimado de dificuldade desta tarefa?
+      options:
+        - Iniciante
+        - Intermediário
+        - Avançado
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição da Tarefa
+      description: O que o estudante deve fazer? Seja específico.
+      placeholder: |
+        Adicione conteúdo sobre [TÓPICO ESPECÍFICO] no arquivo indicado.
+
+        Você deve:
+        - Explicar o conceito de forma clara e didática
+        - Adicionar exemplos práticos
+        - Incluir blocos de código quando apropriado
+        - Citar fontes quando usar informações externas
+      value: |
+        ### O que você deve fazer
+
+        Adicione conteúdo sobre [TÓPICO] no arquivo `[ARQUIVO]`, seção `[SEÇÃO]`.
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de Aceitação
+      description: Como saberemos que a tarefa está completa?
+      placeholder: |
+        - [ ] Explicação clara do conceito (mínimo 150 palavras)
+        - [ ] Pelo menos 2 exemplos práticos
+        - [ ] Código formatado corretamente (se aplicável)
+        - [ ] Links para recursos adicionais
+        - [ ] Revisão de ortografia e gramática
+      value: |
+        Para esta tarefa ser considerada completa, você deve:
+
+        - [ ] Explicar o conceito de forma clara e didática
+        - [ ] Adicionar pelo menos 2 exemplos práticos
+        - [ ] Incluir blocos de código quando apropriado (com sintaxe highlight correto)
+        - [ ] Adicionar links para recursos adicionais (documentação oficial, tutoriais)
+        - [ ] Revisar ortografia e gramática
+        - [ ] Garantir que o Markdown está formatado corretamente
+        - [ ] Mínimo de 150 palavras de conteúdo
+    validations:
+      required: true
+
+  - type: textarea
+    id: dicas
+    attributes:
+      label: Dicas e Recursos
+      description: Dicas ou recursos úteis para completar esta tarefa
+      placeholder: |
+        - Leia o CONTRIBUTING.md antes de começar
+        - Consulte a documentação oficial: https://git-scm.com/doc
+        - Use linguagem simples e acessível
+        - Pense em seus colegas como público-alvo
+      value: |
+        ### Dicas
+
+        - Leia [CONTRIBUTING.md](../CONTRIBUTING.md) antes de começar
+        - Pesquise na [documentação oficial do Git](https://git-scm.com/doc)
+        - Consulte [GitHub Docs](https://docs.github.com) para recursos do GitHub
+        - Use linguagem simples e acessível
+        - Pense em seus colegas como público-alvo
+        - Teste o Markdown localmente antes de fazer commit
+
+  - type: textarea
+    id: pull-request
+    attributes:
+      label: Link do Pull Request
+      description: "Quando você abrir seu PR, adicione o link aqui (edite a issue)"
+      placeholder: "PR: #123"
+
+  - type: checkboxes
+    id: confirmacao
+    attributes:
+      label: Confirmação
+      description: Para reivindicar esta tarefa
+      options:
+        - label: Li e entendi a tarefa
+          required: false
+        - label: Li o arquivo CONTRIBUTING.md
+          required: false
+        - label: Estou pronto(a) para começar
+          required: false

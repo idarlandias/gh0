@@ -1,0 +1,103 @@
+name: ❓ Pergunta
+description: Tem uma dúvida sobre Git, GitHub ou o projeto? Pergunte aqui!
+title: "[PERGUNTA] "
+labels: ["question"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ❓ Pergunta
+
+        Use este template para fazer perguntas sobre:
+        - Como usar Git ou GitHub
+        - Dúvidas sobre o fluxo de trabalho do projeto
+        - Problemas técnicos que você está enfrentando
+        - Conceitos que não entendeu
+
+        **Nota**: Para dúvidas sobre a disciplina (notas, prazos, etc.), use o fórum oficial da turma.
+
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: Categoria da Pergunta
+      description: Sobre o que é sua dúvida?
+      options:
+        - Comandos Git (clone, commit, push, etc.)
+        - Branches e Merge
+        - Conflitos de Merge
+        - Pull Requests
+        - Revisão de Código
+        - Fork e Upstream
+        - Markdown
+        - GitHub (issues, actions, etc.)
+        - Fluxo de Trabalho do Projeto
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: pergunta
+    attributes:
+      label: Sua Pergunta
+      description: Descreva sua dúvida em detalhes
+      placeholder: |
+        Estou tentando fazer [X] mas acontece [Y].
+
+        O que eu fiz:
+        1. ...
+        2. ...
+
+        O que eu esperava:
+        ...
+
+        O que aconteceu:
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: tentativas
+    attributes:
+      label: O que você já tentou?
+      description: Descreva o que você já tentou fazer para resolver (opcional)
+      placeholder: |
+        - Tentei usar o comando `git ...`
+        - Pesquisei no Google sobre ...
+        - Li a documentação em ...
+
+  - type: textarea
+    id: erro
+    attributes:
+      label: Mensagem de Erro (se houver)
+      description: Copie e cole qualquer mensagem de erro que você recebeu
+      placeholder: |
+        ```
+        error: failed to push some refs to '...'
+        ```
+      render: shell
+
+  - type: dropdown
+    id: urgencia
+    attributes:
+      label: Urgência
+      description: Quão urgente é esta dúvida?
+      options:
+        - Baixa - curiosidade, posso esperar
+        - Média - preciso para continuar minha tarefa
+        - Alta - estou bloqueado e não consigo avançar
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Pesquisei na documentação do projeto (CONTRIBUTING.md, README.md)
+          required: false
+        - label: Procurei por issues similares existentes
+          required: false
+        - label: Incluí todas as informações relevantes (comandos que usei, erros que recebi, etc.)
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Fórum da Disciplina
+    url: https://github.com/iaglourenco/gh0/discussions
+    about: Para dúvidas gerais sobre a disciplina, use o fórum oficial da turma
+  - name: 📖 Documentação
+    url: https://github.com/iaglourenco/gh0/blob/main/CONTRIBUTING.md
+    about: Leia o guia de contribuição antes de abrir uma issue

@@ -1,0 +1,73 @@
+name: 📝 Lint de Markdown
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Executar Markdown Lint
+        id: lint
+        continue-on-error: true
+        run: |
+          markdownlint '**/*.md' --config .markdownlint.json --ignore node_modules
+
+      - name: Comentar resultado no PR
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ⚠️ Problemas de Formatação Markdown Encontrados
+
+              O linter de Markdown encontrou alguns problemas na formatação dos seus arquivos .md.
+
+              ### Como corrigir
+
+              1. Verifique os arquivos modificados
+              2. Corrija os problemas de formatação
+              3. Faça commit e push das correções
+              4. Este check será executado novamente automaticamente
+
+              ### Problemas comuns
+
+              - Linhas em branco faltando antes/depois de headers
+              - Indentação incorreta em listas
+              - Links quebrados ou mal formatados
+              - Blocos de código sem especificação de linguagem
+
+              ### Recursos úteis
+
+              - [Guia de Markdown](https://www.markdownguide.org/basic-syntax/)
+              - [Regras do markdownlint](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
+
+              📝 **Dica**: Use um editor com preview de Markdown (como VS Code) para visualizar como ficará renderizado.
+              `
+            })
+
+      - name: Sucesso
+        if: success()
+        run: echo "✅ Markdown formatado corretamente!"

@@ -1,0 +1,107 @@
+name: 🐛 Reportar Erro na Documentação
+description: Encontrou um erro, typo ou informação incorreta? Reporte aqui!
+title: "[BUG] "
+labels: ["bug", "documentacao"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Reportar Erro
+
+        Obrigado por ajudar a melhorar a documentação! Use este template para reportar:
+        - Erros de ortografia ou gramática
+        - Informações incorretas ou desatualizadas
+        - Links quebrados
+        - Problemas de formatação
+        - Exemplos de código que não funcionam
+
+  - type: dropdown
+    id: arquivo
+    attributes:
+      label: Arquivo com Erro
+      description: Em qual arquivo você encontrou o erro?
+      options:
+        - docs/01-conceitos-basicos.md
+        - docs/02-comandos-essenciais.md
+        - docs/03-branching-e-merge.md
+        - docs/04-pull-requests-e-review.md
+        - docs/05-boas-praticas.md
+        - docs/06-resolucao-conflitos.md
+        - docs/07-workflows-github.md
+        - docs/08-ferramentas-e-recursos.md
+        - README.md
+        - CONTRIBUTING.md
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    id: linha
+    attributes:
+      label: Linha (aproximada)
+      description: Qual linha ou seção tem o erro?
+      placeholder: "Ex: Linha 42, Seção 'git commit'"
+
+  - type: dropdown
+    id: tipo-erro
+    attributes:
+      label: Tipo de Erro
+      description: Qual tipo de erro você encontrou?
+      options:
+        - Erro de ortografia/gramática
+        - Informação incorreta
+        - Link quebrado
+        - Exemplo de código não funciona
+        - Formatação Markdown incorreta
+        - Informação desatualizada
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: erro-encontrado
+    attributes:
+      label: Erro Encontrado
+      description: Copie e cole o texto com erro ou descreva o problema
+      placeholder: |
+        Texto atual:
+        ```
+        O comando git puch envia...
+        ```
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: correcao-sugerida
+    attributes:
+      label: Correção Sugerida
+      description: Como deveria ser? (opcional, mas ajuda muito!)
+      placeholder: |
+        Texto corrigido:
+        ```
+        O comando git push envia...
+        ```
+      render: markdown
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto Adicional
+      description: Alguma informação adicional que possa ajudar?
+      placeholder: |
+        - Testei o comando e o resultado foi diferente
+        - De acordo com a documentação oficial...
+        - Print de tela anexado
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Verifiquei que este erro ainda não foi reportado
+          required: true
+        - label: Tenho certeza de que é um erro (não é apenas uma sugestão de melhoria)
+          required: true
