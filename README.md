@@ -42,14 +42,14 @@ Este é um projeto educacional **intensivo de 1 semana (20h)** onde alunos colab
 # 1. Fork este repositório (botão Fork no GitHub)
 
 # 2. Clone SEU fork (não o repositório original!)
-git clone https://github.com/iaglourenco/gh0.git
+git clone https://github.com/SEU-USUARIO/gh0.git
 cd gh0
 
-# 3. Configure upstream (repositório original)
-git remote add upstream https://github.com/PROFESSOR-USUARIO/gh0git
+# 3. Configure o upstream (repositório original do professor)
+git remote add upstream https://github.com/iaglourenco/gh0.git
 
 # 4. Crie uma branch descritiva
-git checkout -b seu-nome/adiciona-secao-git-init
+git switch -c seu-nome/adiciona-secao-git-init
 
 # 5. Faça suas alterações nos arquivos
 # (Edite o arquivo indicado na issue)
@@ -92,7 +92,6 @@ git push origin seu-nome/adiciona-secao-git-init
 
 Veja o [índice completo da documentação](docs/README.md).
 
-
 ## Regras do Projeto
 
 - ✅ Cada aluno deve contribuir com **pelo menos 1 Pull Request**
@@ -132,7 +131,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ### Tutoriais Interativos
 
 - [Learn Git Branching](https://learngitbranching.js.org/) - Visualização interativa
-- [GitHub Learning Lab](https://lab.github.com/) - Cursos práticos
+- [GitHub Skills](https://skills.github.com/) - Cursos práticos oficiais do GitHub
 - [Git Immersion](http://gitimmersion.com/) - Tutorial hands-on
 
 ### Cheat Sheets
